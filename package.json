@@ -1,0 +1,22 @@
+{
+  "name": "discord-imageonly",
+  "version": "1.0.0",
+  "description": "A simple discord bot that deletes messages that don't have an image attached.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeppahBaws/Discord-ImageOnly.git"
+  },
+  "author": "SeppahBaws",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SeppahBaws/Discord-ImageOnly/issues"
+  },
+  "homepage": "https://github.com/SeppahBaws/Discord-ImageOnly#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
