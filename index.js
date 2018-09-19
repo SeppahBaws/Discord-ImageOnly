@@ -1,15 +1,29 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const token = require('./auth.json').token;
+/* Requirements */
+const fs = require('fs');
+const beautify = require('js-beautify').js;
 
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
+/* Discord requirements */
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
+/* Config file */
+const config = require('./config.json');
+
+bot.on('ready', () => {
+    console.log(`Ready to go! Logged in as ${bot.user.username}.`);
+    bot.user.setActivity("Monitoring image only channels");
 });
 
-client.on('message', msg => {
-    if (msg.content === 'ping') {
-        msg.reply('Pong!');
+bot.on('message', message => {
+    if (message.author.bot && config.deleteBotMessages) return;
+
+    if (config.imageOnlyEnabled) {
+        if (config.imageOnlyChannels.indexOf(message.channel.id) > -1) {
+            if (message.attachments.size <= 0) {
+                message.delete();
+            }
+        }
     }
 });
 
-client.login(token);
+bot.login(config.token);
