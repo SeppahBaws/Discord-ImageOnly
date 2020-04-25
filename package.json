@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/SeppahBaws/Discord-ImageOnly#readme",
   "dependencies": {
-    "discord.js": "^11.4.2",
-    "js-beautify": "^1.8.6"
+    "discord.js": "^11.6.4",
+    "js-beautify": "^1.11.0"
   }
 }
